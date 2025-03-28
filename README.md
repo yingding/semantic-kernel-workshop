@@ -1,0 +1,161 @@
+# Semantic Kernel Workshop
+
+A hands-on workshop exploring Microsoft's Semantic Kernel framework for building intelligent AI applications. This workshop provides practical experience with real-world AI application patterns using Python and Azure OpenAI.
+
+## Workshop Overview
+
+This workshop takes you from foundational concepts to advanced implementation patterns through a series of Jupyter notebooks and practical examples. You'll learn how to:
+
+- Build AI applications using Microsoft's Semantic Kernel framework
+- Create and orchestrate AI agents with different capabilities and roles
+- Construct structured AI workflows using the Process Framework
+- Implement enterprise-ready AI features with security and scalability in mind
+
+## Prerequisites
+
+- Python 3.9 or higher
+- Azure OpenAI API access (API key, endpoint, and deployment name)
+- Basic knowledge of Python programming
+- Understanding of prompt engineering concepts (helpful but not required)
+
+## Workshop Modules
+
+### 01. Introduction to Semantic Kernel
+
+Learn the fundamentals of Semantic Kernel:
+- Core architectural components (Kernel, AI Services, Plugins)
+- Building semantic functions with prompts
+- Creating native functions with Python code
+- Implementing memory for persistent context
+- Enabling automatic function calling for AI agents
+
+**Key Notebooks:**
+- `01-intro.ipynb`: Core concepts, services, and function creation
+- `02-memory.ipynb`: Implementing semantic memory with embeddings
+
+### 02. Semantic Kernel Agents
+
+Master the creation and orchestration of AI agents:
+- Creating specialized agents with different personas
+- Implementing multi-agent communication patterns
+- Agent selection strategies and orchestration
+- Building agent topologies for complex scenarios
+- Integrating plugins with agents for enhanced capabilities
+
+**Key Notebooks:**
+- `02.1-agents.ipynb`: Creating and configuring agents
+- `02.2-agents-chats.ipynb`: Inter-agent communication and complex patterns
+
+### 03. Process Framework
+
+Learn to build structured, event-driven AI workflows:
+- Understanding the Process Framework architecture
+- Defining events, steps, and state management
+- Building conversational AI systems with processes
+- Implementing complex business logic with AI capabilities
+- Creating maintainable and testable AI workflows
+
+**Key Notebooks:**
+- `03.1-intro-to-processes.ipynb`: Building stateful, event-driven AI processes
+
+### Interactive Playground
+
+Apply what you've learned in a real application:
+- A full-stack application with React frontend and FastAPI backend
+- Semantic memory implementation
+- AI-powered functions and plugins
+- Translation and summarization capabilities
+- Example of native plugin integration (Weather)
+
+## Project Structure
+
+```
+semantic-kernel-workshop/
+├── 01-intro-to-semantic-kernel/    # Introduction to core concepts
+│   ├── 01-intro.ipynb              # Basic concepts and functions
+│   └── 02-memory.ipynb             # Memory implementation
+├── 02-semantic-kernel-agents/      # Agent creation and orchestration
+│   ├── 02.1-agents.ipynb           # Agent fundamentals
+│   ├── 02.2-agents-chats.ipynb     # Multi-agent communication
+│   └── .env.sample                 # Environment variables template
+├── 03-process-framework/           # Structured AI workflows
+│   └── 03.1-intro-to-processes.ipynb  # Process fundamentals
+└── playground/                     # Interactive application
+    ├── backend/                    # FastAPI server
+    ├── frontend/                   # React application
+    ├── start.sh                    # Launch script
+    └── README.md                   # Playground documentation
+```
+
+## Getting Started
+
+1. Clone this repository
+
+2. Create a virtual environment:
+   
+   **Linux/macOS:**
+   ```bash
+   # Create a virtual environment
+   python -m venv venv
+   
+   # Activate the virtual environment
+   source venv/bin/activate
+   ```
+   
+   **Windows:**
+   ```cmd
+   # Create a virtual environment
+   python -m venv venv
+   
+   # Activate the virtual environment
+   venv\Scripts\activate
+   ```
+
+3. Copy the environment variables template:
+   ```bash
+   cp .env.sample .env
+   ```
+
+4. Add your Azure OpenAI credentials to the `.env` file:
+   ```
+   AZURE_OPENAI_DEPLOYMENT=your-deployment-name
+   AZURE_OPENAI_API_KEY=your-api-key 
+   AZURE_OPENAI_ENDPOINT=your-azure-endpoint
+   AZURE_OPENAI_API_VERSION=2024-02-15-preview
+   AZURE_OPENAI_EMBEDDING_DEPLOYMENT=your-embedding-deployment
+   ```
+
+5. Start with the first notebook:
+   - Begin with `01-intro-to-semantic-kernel/01-intro.ipynb`, which includes instructions for installing Semantic Kernel and other required packages.
+
+## Learning Path
+
+For optimal learning, follow this progression:
+
+1. **Foundational Concepts**: Start with `01-intro.ipynb` to understand the core components
+2. **Memory Implementation**: Explore `02-memory.ipynb` to see how semantic memory works
+3. **Basic Agents**: Create your first agents in `02.1-agents.ipynb`
+4. **Advanced Agent Patterns**: Study complex agent interactions in `02.2-agents-chats.ipynb`
+5. **Process Framework**: Learn structured workflows with `03.1-intro-to-processes.ipynb`
+6. **Practical Application**: Apply everything in the interactive playground
+
+## Advanced Topics and Resources
+
+For advanced patterns and enterprise deployment scenarios, explore the [Semantic Kernel Advanced Usage](https://github.com/Azure-Samples/semantic-kernel-advanced-usage) repository, which includes:
+
+- Dapr integration for scalable, distributed systems
+- Authentication and security patterns
+- Natural language to SQL conversion
+- Copilot Studio integration
+- Microsoft Graph API integration
+- Production deployment architecture
+
+## Additional Resources
+
+- [Semantic Kernel Documentation](https://learn.microsoft.com/en-us/semantic-kernel/overview/)
+- [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
+- [Microsoft Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
