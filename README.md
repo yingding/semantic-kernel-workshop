@@ -113,7 +113,7 @@ semantic-kernel-workshop/
 
 3. Copy the environment variables template:
    ```bash
-   cp .env.sample .env
+   cp .env.example .env
    ```
 
 4. Add your Azure OpenAI credentials to the `.env` file:
