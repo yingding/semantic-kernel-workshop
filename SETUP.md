@@ -65,6 +65,17 @@ Invoke-Expression "(Get-Command python).Source";
 & "python" -m pip install -r $PackageFile --no-cache-dir;
 ```
 
+## Install a nodejs env
+
+```powershell
+nvm list available
+nvm install 23.9.0
+nvm use 23.9.0
+nvm ls 
+```
+
+
+
 ## Env variable setup
 
 * Connection String for the Azure AI Project examples https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples
