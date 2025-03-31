@@ -101,7 +101,10 @@ $PROJ_ROOT_DIRS="Documents\VCS\agents";
 $PROJ_PATH="$env:USERPROFILE\$PROJ_ROOT_DIRS\$PROJ_DIR_NAME";
 cd "$PROJ_PATH";
 
-.\start.ps1
+& ".\start.ps1"
+
+# & ".\start_sync.ps1"
+# .\start.ps1
 ```
 
 
