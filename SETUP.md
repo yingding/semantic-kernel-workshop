@@ -55,8 +55,8 @@ Invoke-Expression "(Get-Command python).Source";
 
 ## Install python packages
 ```powershell
-$PROJ_DIR_NAME="azure-ai-agent-service-enterprise-demo";
-$PROJ_ROOT_DIRS="Documents\VCS\democollections";
+$PROJ_DIR_NAME="semantic-kernel-workshop\playground";
+$PROJ_ROOT_DIRS="Documents\VCS\agents";
 $PROJ_PATH="$env:USERPROFILE\$PROJ_ROOT_DIRS\$PROJ_DIR_NAME";
 cd "$PROJ_PATH";
 
@@ -71,8 +71,37 @@ Invoke-Expression "(Get-Command python).Source";
 nvm list available
 nvm install 23.9.0
 nvm use 23.9.0
-nvm ls 
+nvm ls
+
+$PROJ_DIR_NAME="semantic-kernel-workshop\playground\frontend";
+$PROJ_ROOT_DIRS="Documents\VCS\agents";
+$PROJ_PATH="$env:USERPROFILE\$PROJ_ROOT_DIRS\$PROJ_DIR_NAME";
+cd "$PROJ_PATH";
+npm install
 ```
+
+## start frontend and back
+1. Activate Python VENV
+```powershell
+$VERSION="3.12";
+$ENV_NAME="multiagents";
+$ENV_SURFIX="pip";
+$ENV_FULL_NAME = "$ENV_NAME$VERSION$ENV_SURFIX";
+$WORK_DIR="$env:USERPROFILE\Documents\VENV\";
+& "$WORK_DIR$ENV_FULL_NAME\Scripts\Activate.ps1";
+Invoke-Expression "(Get-Command python).Source";
+```
+
+2. change directory to the project playground
+```powershell
+$PROJ_DIR_NAME="semantic-kernel-workshop\playground";
+$PROJ_ROOT_DIRS="Documents\VCS\agents";
+$PROJ_PATH="$env:USERPROFILE\$PROJ_ROOT_DIRS\$PROJ_DIR_NAME";
+cd "$PROJ_PATH";
+
+.\start.ps1
+```
+
 
 
 
