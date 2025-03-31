@@ -52,7 +52,8 @@ Register-EngineEvent PowerShell.Exiting -Action { Cleanup }
 
 Write-Host "--------------------------------"
 Write-Host "🚀 Services are running!"
-Write-Host "Frontend: http://localhost:5173"
+# Write-Host "Frontend: http://localhost:5173"
+Write-Host "Frontend: http://localhost:3000"
 Write-Host "Backend: http://localhost:8000"
 Write-Host "Press Ctrl+C to stop all services"
 

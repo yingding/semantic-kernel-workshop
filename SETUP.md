@@ -27,6 +27,7 @@ $WORK_DIR="$env:USERPROFILE\Documents\VENV\";
 Invoke-Expression "(Get-Command python).Source";
 ```
 
+<!--
 ## (Not for playground) Python 3.12
 ### Creat VENV
 use the `create_env.sh` script to create a venv on windows, the `create_env.sh` file located current in a different project
@@ -52,6 +53,7 @@ $WORK_DIR="$env:USERPROFILE\Documents\VENV\";
 & "$WORK_DIR$ENV_FULL_NAME\Scripts\Activate.ps1";
 Invoke-Expression "(Get-Command python).Source";
 ```
+-->
 
 ## Install python packages
 ```powershell
@@ -83,7 +85,7 @@ npm install
 ## start frontend and back
 1. Activate Python VENV
 ```powershell
-$VERSION="3.12";
+$VERSION="3.13";
 $ENV_NAME="multiagents";
 $ENV_SURFIX="pip";
 $ENV_FULL_NAME = "$ENV_NAME$VERSION$ENV_SURFIX";
