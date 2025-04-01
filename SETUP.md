@@ -104,7 +104,6 @@ cd "$PROJ_PATH";
 & ".\start.ps1"
 
 # & ".\start_sync.ps1"
-# .\start.ps1
 ```
 
 
