@@ -115,5 +115,18 @@ cd "$PROJ_PATH";
 * Python code sample of Azure AI Project connection string https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/ai/azure-ai-projects/samples/connections/sample_connections.py
 
 ## Additional Read
+* Semantic Kernel AzureAIAgent (Exprimental) https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/azure-ai-agent?pivots=programming-language-python
 * Multi Agent Examples: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples/agents
+
+* Semantic Kernel Roadmap: https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-roadmap-h1-2025-accelerating-agents-processes-and-integration/
+* Multi-agent Orchestration with SK https://techcommunity.microsoft.com/blog/educatordeveloperblog/using-azure-ai-agent-service-with-autogen--semantic-kernel-to-build-a-multi-agen/4363121
+* Semantic Kernel Workshop (Intro.) https://github.com/Azure-Samples/semantic-kernel-workshop/
+* Semantic Kernel Workshop (Adv.) https://github.com/Azure-Samples/semantic-kernel-advanced-usage
+* Observability in Semantic Kernel with OpenTelemetry https://devblogs.microsoft.com/semantic-kernel/observability-in-semantic-kernel/
+
+* Microsoft Blogpost multi agent orchestration https://techcommunity.microsoft.com/blog/azure-ai-services-blog/building-a-multimodal-multi-agent-system-using-azure-ai-agent-service-and-openai/4396267
+* Semantic Kernel Agent Framework https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/?pivots=programming-language-python
+
+* Microsoft 365 Agent SDK (M365 Teams, Copilot Studio, Webchat) https://github.com/Microsoft/Agents
+
 
