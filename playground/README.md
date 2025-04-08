@@ -14,7 +14,8 @@ AZURE_OPENAI_EMBEDDING_DEPLOYMENT=your-embedding-deployment-name
 
 2. Install dependencies:
 ```
-cd frontend && npm install
+cd frontend
+npm install --legacy-peer-deps
 ```
 
 3. Start the application:
