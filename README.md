@@ -30,7 +30,7 @@ For setup instructions and details on how to run the playground, refer to the [P
 
 ## Prerequisites
 
-- Python 3.9 or higher
+- Python 3.10 or higher
 - Azure OpenAI API access (API key, endpoint, and deployment name)
 - Basic knowledge of Python programming
 - Understanding of prompt engineering concepts (helpful but not required)
