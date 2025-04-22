@@ -403,6 +403,8 @@ FodyWeavers.xsd
 
 # remove package-lock.json
 **/package-lock.json
+**/logs/
+
 
 # UV
 **/uv.lock
