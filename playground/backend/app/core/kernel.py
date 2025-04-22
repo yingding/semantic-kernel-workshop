@@ -29,8 +29,9 @@ logger = logging.getLogger(__name__)
 deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
 api_key = os.getenv("AZURE_OPENAI_API_KEY")
 base_url = os.getenv("AZURE_OPENAI_ENDPOINT")
+api_version = os.getenv("AOAI_DEPLOYMENT_API_VERSION", "2024-10-21")
 embedding_deployment = os.getenv(
-    "AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-ada-002"
+    "AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME", "text-embedding-ada-002"
 )
 
 # Initialize memory store
@@ -87,6 +88,7 @@ def create_kernel(
         deployment_name=deployment_name,
         api_key=api_key,
         service_id="chat",
+        api_version=api_version,
     )
     kernel.add_service(chat_completion)
 

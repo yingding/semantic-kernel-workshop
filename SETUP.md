@@ -139,3 +139,4 @@ http://localhost:8000/docs
 
 ## Reference
 * Semantic Kernel Env Variable https://pypi.org/project/semantic-kernel/
+* SK AzureChatCompletion Constructor https://github.com/microsoft/semantic-kernel/blob/main/python/semantic_kernel/connectors/ai/open_ai/services/azure_chat_completion.py
