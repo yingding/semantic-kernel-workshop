@@ -71,8 +71,10 @@ Invoke-Expression "(Get-Command python).Source";
 
 ```powershell
 nvm list available
-nvm install 23.9.0
-nvm use 23.9.0
+# nvm install 23.9.0
+nvm install 23.11.0
+# nvm uninstall 23.9.0
+nvm use 23.11.0
 nvm ls
 
 $PROJ_DIR_NAME="semantic-kernel-workshop\playground\frontend";

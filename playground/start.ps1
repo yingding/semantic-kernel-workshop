@@ -3,7 +3,7 @@ $env:BACKEND_HOST = "localhost"
 $env:BACKEND_PORT = 8000
 $env:FRONTEND_HOST = "localhost"
 $env:FRONTEND_PORT = 3000 #5173
-$WAIT_TIMEOUT = 30 # seconds
+$WAIT_TIMEOUT = 60 # seconds
 
 # Path to npm
 $NPM_PATH = "C:\nvm4w\nodejs\npm.cmd"
