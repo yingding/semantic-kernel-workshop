@@ -190,6 +190,9 @@ $global:FRONTEND_PROC = Start-Process -FilePath $NPM_PATH -ArgumentList "run dev
 Pop-Location
 
 # write only the process IDs to the files instead of entire process objects
+# Caution: Start-Process returns the wrong process ID 
+# when using -PassThru with -NoNewWindow. This is a known issue in PowerShell.
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/start-process?view=powershell-7.3#parameters
 $global:BACKEND_PROC.Id | Out-File -FilePath $BACKEND_PROC_FILE -Force
 $global:FRONTEND_PROC.Id | Out-File -FilePath $FRONTEND_PROC_FILE -Force
 
