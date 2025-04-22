@@ -81,14 +81,51 @@ Write-Host "--------------------------------"
 function Cleanup {
     Write-Host "Shutting down services..."
     # if the backend process and frontend process file exists, read the process id from the file and assign it to the global variables
-        # Read process IDs from files if they exist
+    
+    # get the node process
+    $nodeProcess = Get-Process -Name node -ErrorAction SilentlyContinue
+    if ($nodeProcess) {
+        $nodeProcess | Stop-Process -Force
+        Write-Output "Node.js server stopped."
+        Remove-Item -Path $FRONTEND_PROC_FILE -ErrorAction SilentlyContinue
+    } else {
+        Write-Output "No Node.js server is running."
+    }
+
+    # get the node process
+    # Get-Process with process name contains "python" prefix
+    $pythonProcesses = Get-Process -Name python* -ErrorAction SilentlyContinue
+    if ($pythonProcesses) {
+        # $pythonProcess | Stop-Process -Force
+        # Stop all Python processes
+        $pythonProcesses | ForEach-Object { Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue }
+        Write-Output "Python server stopped."
+        Remove-Item -Path $BACKEND_PROC_FILE -ErrorAction SilentlyContinue
+    } else {
+        Write-Output "No Python server is running."
+    }
+    
+    # Read process IDs from files if they exist
     if (Test-Path $BACKEND_PROC_FILE) {
         $backendProcId = Get-Content -Path $BACKEND_PROC_FILE -Raw
         try {
             $process = Get-Process -Id $backendProcId -ErrorAction SilentlyContinue
             if ($process) {
                 Write-Host "Stopping backend process (PID: $backendProcId)..."
-                $process.Kill()
+                # $process.Kill()
+                # kill the subprocess if it is not responding
+                # force kill the process if it is not responding
+                Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+                # $process | Stop-Process -Force -ErrorAction SilentlyContinue
+                # waiting for the process to exit
+                # $process.WaitForExit()
+                if ($process.HasExited) {
+                    Write-Host "Backend process terminated successfully."
+                    Remove-Item -Path $BACKEND_PROC_FILE -ErrorAction SilentlyContinue
+
+                } else {
+                    Write-Host "Failed to terminate backend process." -ForegroundColor Red
+                }
             }
         } catch {
             Write-Host "Could not terminate backend process: $_" -ForegroundColor Yellow
@@ -104,7 +141,18 @@ function Cleanup {
             $process = Get-Process -Id $frontendProcId -ErrorAction SilentlyContinue
             if ($process) {
                 Write-Host "Stopping frontend process (PID: $frontendProcId)..."
-                $process.Kill()
+                # force kill the process if it is not responding
+                Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+                # $process | Stop-Process -Force -ErrorAction SilentlyContinue
+                # $process.Kill()
+                # waiting for the process to exit
+                $process.WaitForExit()
+                if ($process.HasExited) {
+                    Write-Host "Frontend process terminated successfully."
+                    Remove-Item -Path $FRONTEND_PROC_FILE -ErrorAction SilentlyContinue
+                } else {
+                    Write-Host "Failed to terminate frontend process." -ForegroundColor Red
+                }
             }
         } catch {
             Write-Host "Could not terminate frontend process: $_" -ForegroundColor Yellow
