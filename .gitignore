@@ -399,7 +399,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .env
-.DS_Store 
+.DS_Store
 
 # remove package-lock.json
 **/package-lock.json
+
+# UV
+**/uv.lock

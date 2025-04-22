@@ -11,12 +11,42 @@ This workshop takes you from foundational concepts to advanced implementation pa
 - Construct structured AI workflows using the Process Framework
 - Implement enterprise-ready AI features with security and scalability in mind
 
+## Interactive Playground Demo
+
+Experience Semantic Kernel in action through our interactive playground! This visual demonstration allows you to directly engage with the core concepts covered in the workshop.
+
+![Semantic Kernel Playground Demo](playground/assets/sk-playground.gif)
+
+The playground offers a hands-on environment where you can:
+- Test semantic functions in real-time
+- Explore agent capabilities and interactions
+- Experiment with memory and embeddings
+- Try out native plugin integration
+- See the Process Framework in action
+
+No need to wait until the end of the workshop - you can start exploring the playground at any time to reinforce concepts as you learn them!
+
+For setup instructions and details on how to run the playground, refer to the [Playground README](playground/README.md).
+
 ## Prerequisites
 
-- Python 3.9 or higher
+- Python 3.10 or higher
 - Azure OpenAI API access (API key, endpoint, and deployment name)
 - Basic knowledge of Python programming
 - Understanding of prompt engineering concepts (helpful but not required)
+- [UV package manager](https://docs.astral.sh/uv/getting-started/installation/)
+
+### Local Dependencies Setup
+
+The project is managed by pyproject.toml and [uv package manager](https://docs.astral.sh/uv/getting-started/installation/).
+
+For local execution init the .venv environment using [uv package manager](https://docs.astral.sh/uv/getting-started/installation/):
+
+```shell
+uv sync --prerelease=allow
+. ./.venv/bin/activate
+```
+>OBS! At the time of writing the workshop depends on the prerelease libraries. 
 
 ## Workshop Modules
 
@@ -57,15 +87,6 @@ Learn to build structured, event-driven AI workflows:
 
 **Key Notebooks:**
 - `03.1-intro-to-processes.ipynb`: Building stateful, event-driven AI processes
-
-### Interactive Playground
-
-Apply what you've learned in a real application:
-- A full-stack application with React frontend and FastAPI backend
-- Semantic memory implementation
-- AI-powered functions and plugins
-- Translation and summarization capabilities
-- Example of native plugin integration (Weather)
 
 ## Project Structure
 
@@ -158,4 +179,4 @@ For advanced patterns and enterprise deployment scenarios, explore the [Semantic
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
