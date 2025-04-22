@@ -204,15 +204,6 @@ Write-Host "Backend: http://$($env:BACKEND_HOST):$($env:BACKEND_PORT)/docs"
 Write-Host "Log files: backend.log, frontend.log"
 Write-Host "Press Ctrl+C to stop all services"
 
-# Wait for both background processes to complete (will only happen on Ctrl+C)
-# while true
-# while ($true) {
-#     if ($global:BACKEND_PROC.HasExited -or $global:FRONTEND_PROC.HasExited) {
-#         Cleanup
-#     }
-#     Start-Sleep -Seconds 1
-# }
-
 # Main monitoring loop with improved production features
 $running = $true
 $maxRetries = 5
@@ -311,65 +302,3 @@ try {
     $formattedTotalTime = "{0:d2}:{1:d2}:{2:d2}" -f $totalRuntime.Hours, $totalRuntime.Minutes, $totalRuntime.Seconds
     Write-Host "Services have been stopped. Total runtime: $formattedTotalTime. Exiting..." -ForegroundColor Green
 }
-
-# Wait for both processes
-# $running = $true
-# $maxRetries = 5
-# $retryCount = 0
-
-# while ($running) {
-#     try {
-#         # Listen for Ctrl+C in the background
-#         [console]::TreatControlCAsInput = $true
-#         if ($Host.UI.RawUI.KeyAvailable -and (3 -eq [int]$Host.UI.RawUI.ReadKey("AllowCtrlC,IncludeKeyUp,NoEcho").Character)) {
-#             Write-Host "Ctrl+C detected. Shutting down..." -ForegroundColor Yellow
-#             Cleanup
-#             $running = $false
-#             break
-#         } else {
-#             [console]::TreatControlCAsInput = $false
-#         }
-
-#         # Check if the backend process is still running
-#         if ($global:BACKEND_PROC -eq $null -or $global:BACKEND_PROC.HasExited) {
-#             Write-Host "Backend server has stopped unexpectedly." -ForegroundColor Red
-#             Cleanup
-#             $running = $false
-#             break
-#         }
-
-#         # Check if the frontend process is still running
-#         if ($global:FRONTEND_PROC -eq $null -or $global:FRONTEND_PROC.HasExited) {
-#             Write-Host "Frontend server has stopped unexpectedly." -ForegroundColor Red
-#             Cleanup
-#             $running = $false
-#             break
-#         }
-
-#         # Check if either process has completed
-#         if ($global:BACKEND_PROC.State -eq "Completed" -or $global:FRONTEND_PROC.State -eq "Completed") {
-#             Write-Host "One of the processes has completed. Shutting down..." -ForegroundColor Yellow
-#             Cleanup
-#             $running = $false
-#             break
-#         }
-
-#         # Retry logic for stuck processes
-#         if ($retryCount -ge $maxRetries) {
-#             Write-Host "Max retries reached. Forcing shutdown..." -ForegroundColor Red
-#             Cleanup
-#             $running = $false
-#             break
-#         }
-
-#         # Sleep before the next iteration
-#         Start-Sleep -Seconds 1
-#         $retryCount = 0  # Reset retry count if no issues
-#     } catch {
-#         Write-Host "An error occurred in the monitoring loop: $_" -ForegroundColor Red
-#         $retryCount++
-#         Start-Sleep -Seconds 1
-#     }
-# }
-
-# Write-Host "Services have been stopped. Exiting..." -ForegroundColor Green
