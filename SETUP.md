@@ -107,8 +107,6 @@ cd "$PROJ_PATH";
 ```
 
 
-
-
 ## Env variable setup
 
 * Connection String for the Azure AI Project examples https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples
@@ -128,5 +126,8 @@ cd "$PROJ_PATH";
 * Semantic Kernel Agent Framework https://learn.microsoft.com/en-us/semantic-kernel/frameworks/agent/?pivots=programming-language-python
 
 * Microsoft 365 Agent SDK (M365 Teams, Copilot Studio, Webchat) https://github.com/Microsoft/Agents
+
+## Issues
+* "chat_deployment_name is required" https://github.com/microsoft/semantic-kernel/issues/11404#issuecomment-2784972513
 
 
