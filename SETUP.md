@@ -137,4 +137,5 @@ http://localhost:8000/docs
 ## Issues
 * "chat_deployment_name is required" https://github.com/microsoft/semantic-kernel/issues/11404#issuecomment-2784972513
 
-
+## Reference
+* Semantic Kernel Env Variable https://pypi.org/project/semantic-kernel/
