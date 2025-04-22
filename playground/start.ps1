@@ -17,16 +17,16 @@ function Command-Exists {
 # Function to wait for a port to be open
 function Wait-ForPort {
     param(
-        [string]$host,
+        [string]$targetHost,
         [int]$port,
         [string]$serviceName
     )
     $timeout = $WAIT_TIMEOUT
     $startTime = Get-Date
-    Write-Host -NoNewline "Waiting for $serviceName on $host`:$port..."
+    Write-Host -NoNewline "Waiting for $serviceName on $targetHost`:$port..."
 
     if (Command-Exists "Test-NetConnection") {
-        while (-not (Test-NetConnection -ComputerName $host -Port $port -InformationLevel Quiet)) {
+        while (-not (Test-NetConnection -ComputerName $targetHost -Port $port -InformationLevel Quiet)) {
             $currentTime = Get-Date
             if (($currentTime - $startTime).TotalSeconds -ge $timeout) {
                 Write-Host " Timeout!"
@@ -38,7 +38,7 @@ function Wait-ForPort {
             Start-Sleep -Seconds 1
         }
     } elseif (Command-Exists "curl") {
-        while (-not (curl --silent --head --fail "http://$host`:$port" 2>$null)) {
+        while (-not (curl --silent --head --fail "http://$targetHost`:$port" 2>$null)) {
             $currentTime = Get-Date
             if (($currentTime - $startTime).TotalSeconds -ge $timeout) {
                 Write-Host " Timeout!"
