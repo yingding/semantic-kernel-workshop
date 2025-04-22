@@ -108,6 +108,11 @@ cd "$PROJ_PATH";
 # & ".\start_sync.ps1"
 ```
 
+## (Optional) local backend endpoint swagger api
+```output
+http://localhost:8000/docs
+```
+
 
 ## Env variable setup
 
