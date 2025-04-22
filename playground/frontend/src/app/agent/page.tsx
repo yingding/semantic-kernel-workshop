@@ -159,9 +159,18 @@ Be imaginative while maintaining coherent narratives.`,
       }
       
       // Add assistant response to chat
+      // const assistantMessage: Message = {
+      //   role: 'assistant',
+      //   content: response.data.response
+      // };
+
       const assistantMessage: Message = {
         role: 'assistant',
-        content: response.data.response
+        content: typeof response.data.response === 'object' 
+          ? (response.data.response.items?.[0]?.text || 
+             response.data.response.content || 
+             JSON.stringify(response.data.response))
+          : response.data.response
       };
       
       setMessages(prev => [...prev, assistantMessage]);
